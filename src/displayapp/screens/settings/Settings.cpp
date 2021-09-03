@@ -29,13 +29,6 @@ Settings::~Settings() {
   lv_obj_clean(lv_scr_act());
 }
 
-bool Settings::Refresh() {
-
-  if (running)
-    running = screens.Refresh();
-  return running;
-}
-
 bool Settings::OnTouchEvent(Pinetime::Applications::TouchEvents event) {
   return screens.OnTouchEvent(event);
 }
@@ -68,7 +61,7 @@ std::unique_ptr<Screen> Settings::CreateScreen3() {
 
   std::array<Screens::List::Applications, 4> applications {{
     {Symbols::heartBeat, "Heart Rate", Apps::SettingHeartRate},
-    {Symbols::none, "", Apps::None},
+    {Symbols::paintbrush, "PTS Colors", Apps::SettingPineTimeStyle},
     {Symbols::none, "", Apps::None},
     {Symbols::none, "", Apps::None},
   }};
