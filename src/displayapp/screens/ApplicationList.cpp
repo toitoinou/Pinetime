@@ -22,9 +22,7 @@ ApplicationList::ApplicationList(Pinetime::Applications::DisplayApp* app,
                [this]() -> std::unique_ptr<Screen> {
                  return CreateScreen1();
                },
-               [this]() -> std::unique_ptr<Screen> {
-                 return CreateScreen2();
-               },
+               //[this]() -> std::unique_ptr<Screen> {return CreateScreen2();},
                //[this]() -> std::unique_ptr<Screen> { return CreateScreen3(); }
              },
              Screens::ScreenListModes::UpDown} {
@@ -42,18 +40,18 @@ std::unique_ptr<Screen> ApplicationList::CreateScreen1() {
   std::array<Screens::Tile::Applications, 6> applications {{
     {Symbols::stopWatch, Apps::StopWatch},
     {Symbols::music, Apps::Music},
-    {Symbols::map, Apps::Navigation},
+    {Symbols::hourGlass, Apps::Timer},
     {Symbols::shoe, Apps::Steps},
     {Symbols::heartBeat, Apps::HeartRate},
-    {Symbols::hourGlass, Apps::Timer},
+    {Symbols::drum, Apps::Metronome},
   }};
 
-  return std::make_unique<Screens::Tile>(0, 2, app, settingsController, batteryController, dateTimeController, applications);
+  return std::make_unique<Screens::Tile>(0, 1, app, settingsController, batteryController, dateTimeController, applications);
 }
 
-std::unique_ptr<Screen> ApplicationList::CreateScreen2() {
+/*std::unique_ptr<Screen> ApplicationList::CreateScreen2() {
   std::array<Screens::Tile::Applications, 6> applications {{
-    {Symbols::drum, Apps::Metronome},
+    {"", Apps::None},
     {"", Apps::None},
     {"", Apps::None},
     {"", Apps::None},
@@ -62,7 +60,7 @@ std::unique_ptr<Screen> ApplicationList::CreateScreen2() {
   }};
 
   return std::make_unique<Screens::Tile>(1, 2, app, settingsController, batteryController, dateTimeController, applications);
-}
+}*/
 
 /*std::unique_ptr<Screen> ApplicationList::CreateScreen3() {
   std::array<Screens::Tile::Applications, 6> applications {

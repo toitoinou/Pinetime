@@ -25,9 +25,9 @@ namespace Pinetime {
         Pinetime::Controllers::Battery& batteryController;
         Controllers::DateTime& dateTimeController;
 
-        ScreenList<2> screens;
+        ScreenList<1> screens;
         std::unique_ptr<Screen> CreateScreen1();
-        std::unique_ptr<Screen> CreateScreen2();
+        //std::unique_ptr<Screen> CreateScreen2();
         // std::unique_ptr<Screen> CreateScreen3();
       };
     }
