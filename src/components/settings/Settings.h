@@ -151,14 +151,27 @@ namespace Pinetime {
         return settings.brightLevel;
       };
 
-      void SetStepsGoal( uint32_t goal ) { 
-        if ( goal != settings.stepsGoal ) {
+      void SetStepsGoal(uint32_t goal) {
+        if (goal != settings.stepsGoal) {
           settingsChanged = true;
         }
-        settings.stepsGoal = goal; 
+        settings.stepsGoal = goal;
       };
-      
-      uint32_t GetStepsGoal() const { return settings.stepsGoal; };
+
+      uint32_t GetStepsGoal() const {
+        return settings.stepsGoal;
+      };
+
+      void SetHeartSensorGain(uint32_t gain) {
+        if (gain != settings.heartSensorGain) {
+          settingsChanged = true;
+        }
+        settings.heartSensorGain = gain;
+      };
+
+      uint32_t GetHeartSensorGain() const {
+        return settings.heartSensorGain;
+      };
 
     private:
       Pinetime::Controllers::FS& fs;
@@ -173,6 +186,7 @@ namespace Pinetime {
         Vibration vibrationStatus = Vibration::ON;
 
         uint8_t clockFace = 0;
+        uint8_t heartSensorGain = 4;
 
         PineTimeStyle PTS;
 

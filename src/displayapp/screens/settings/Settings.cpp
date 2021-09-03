@@ -60,10 +60,10 @@ std::unique_ptr<Screen> Settings::CreateScreen2() {
 std::unique_ptr<Screen> Settings::CreateScreen3() {
 
   std::array<Screens::List::Applications, 4> applications {{
+    {Symbols::heartBeat, "Heart Rate", Apps::SettingHeartRate},
     {Symbols::paintbrush, "PTS Colors", Apps::SettingPineTimeStyle},
-    {Symbols::none, "None", Apps::None},
-    {Symbols::none, "None", Apps::None},
-    {Symbols::none, "None", Apps::None},
+    {Symbols::none, "", Apps::None},
+    {Symbols::none, "", Apps::None},
   }};
 
   return std::make_unique<Screens::List>(2, 3, app, settingsController, applications);

@@ -110,9 +110,6 @@ void ble_manager_set_ble_disconnection_callback(void (*disconnection)());
 static constexpr uint8_t pinTouchIrq = 28;
 static constexpr uint8_t pinPowerPresentIrq = 19;
 
-Pinetime::Controllers::HeartRateController heartRateController;
-Pinetime::Applications::HeartRateTask heartRateApp(heartRateSensor, heartRateController);
-
 Pinetime::Controllers::DateTime dateTimeController;
 Pinetime::Drivers::Watchdog watchdog;
 Pinetime::Drivers::WatchdogView watchdogView(watchdog);
@@ -125,6 +122,8 @@ Pinetime::Controllers::FS fs {spiNorFlash};
 Pinetime::Controllers::Settings settingsController {fs};
 Pinetime::Controllers::MotorController motorController {settingsController};
 
+Pinetime::Controllers::HeartRateController heartRateController;
+Pinetime::Applications::HeartRateTask heartRateApp(heartRateSensor, heartRateController, settingsController);
 
 Pinetime::Applications::DisplayApp displayApp(lcd,
                                               lvgl,

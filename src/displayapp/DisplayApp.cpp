@@ -42,6 +42,7 @@
 #include "displayapp/screens/settings/SettingWakeUp.h"
 #include "displayapp/screens/settings/SettingDisplay.h"
 #include "displayapp/screens/settings/SettingSteps.h"
+#include "displayapp/screens/settings/SettingHeartRate.h"
 #include "displayapp/screens/settings/SettingPineTimeStyle.h"
 
 #include "libs/lv_conf.h"
@@ -341,7 +342,7 @@ void DisplayApp::LoadApp(Apps app, DisplayApp::FullRefreshDirections direction) 
       currentScreen = std::make_unique<Screens::Timer>(this, timerController);
       break;
 
-    // Settings
+    // Quick settings
     case Apps::QuickSettings:
       currentScreen = std::make_unique<Screens::QuickSettings>(
         this, batteryController, dateTimeController, brightnessController, motorController, settingsController);
@@ -371,6 +372,8 @@ void DisplayApp::LoadApp(Apps app, DisplayApp::FullRefreshDirections direction) 
       currentScreen = std::make_unique<Screens::SettingSteps>(this, settingsController);
       ReturnApp(Apps::Settings, FullRefreshDirections::Down, TouchEvents::SwipeDown);
       break;
+    case Apps::SettingHeartRate:
+      currentScreen = std::make_unique<Screens::SettingHeartRate>(this, settingsController);
     case Apps::SettingPineTimeStyle:
       currentScreen = std::make_unique<Screens::SettingPineTimeStyle>(this, settingsController);
       ReturnApp(Apps::Settings, FullRefreshDirections::Down, TouchEvents::SwipeDown);
@@ -388,6 +391,8 @@ void DisplayApp::LoadApp(Apps app, DisplayApp::FullRefreshDirections direction) 
       currentScreen = std::make_unique<Screens::FlashLight>(this, *systemTask, brightnessController);
       ReturnApp(Apps::Clock, FullRefreshDirections::Down, TouchEvents::None);
       break;
+
+    // Apps
     case Apps::StopWatch:
       currentScreen = std::make_unique<Screens::StopWatch>(this, *systemTask);
       break;
