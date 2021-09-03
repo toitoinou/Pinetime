@@ -15,7 +15,7 @@ Toitoinous selection based on Infinitime v1.4 with the following changes
  - This HRS related PR : https://github.com/JF002/InfiniTime/pull/531
  - This timer related PR :https://github.com/JF002/InfiniTime/pull/554
  - This wake up time related PR : https://github.com/JF002/InfiniTime/pull/586
- - Paddle, twos, Infinipaint and motion apps have been removed
+ - Paddle, twos, Infinipaint, navigation and motion apps have been removed
 # InfiniTime
 
 ![InfiniTime logo](images/infinitime-logo.jpg "InfiniTime Logo")
