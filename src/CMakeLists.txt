@@ -393,8 +393,6 @@ list(APPEND SOURCE_FILES
         displayapp/screens/Clock.cpp
         displayapp/screens/Tile.cpp
         displayapp/screens/Meter.cpp
-        displayapp/screens/InfiniPaint.cpp
-        displayapp/screens/Paddle.cpp
         displayapp/screens/StopWatch.cpp
         displayapp/screens/BatteryIcon.cpp
         displayapp/screens/BleIcon.cpp
@@ -406,11 +404,9 @@ list(APPEND SOURCE_FILES
         displayapp/screens/Music.cpp
         displayapp/screens/Navigation.cpp
         displayapp/screens/Metronome.cpp
-        displayapp/screens/Motion.cpp
         displayapp/screens/FirmwareValidation.cpp
         displayapp/screens/ApplicationList.cpp
         displayapp/screens/Notifications.cpp
-        displayapp/screens/Twos.cpp
         displayapp/screens/HeartRate.cpp
         displayapp/screens/Motion.cpp
         displayapp/screens/FlashLight.cpp
@@ -418,6 +414,7 @@ list(APPEND SOURCE_FILES
         displayapp/screens/BatteryInfo.cpp
         displayapp/screens/Steps.cpp
         displayapp/screens/Timer.cpp
+        displayapp/Colors.cpp
 
         ## Settings
         displayapp/screens/settings/QuickSettings.cpp
@@ -427,6 +424,8 @@ list(APPEND SOURCE_FILES
         displayapp/screens/settings/SettingWakeUp.cpp
         displayapp/screens/settings/SettingDisplay.cpp
         displayapp/screens/settings/SettingSteps.cpp
+        displayapp/screens/settings/SettingHeartRate.cpp
+        displayapp/screens/settings/SettingPineTimeStyle.cpp
 
         ## Watch faces
         displayapp/icons/bg_clock.c
@@ -495,6 +494,8 @@ list(APPEND SOURCE_FILES
         components/heartrate/Biquad.cpp
         components/heartrate/Ptagc.cpp
         components/heartrate/HeartRateController.cpp
+
+        touchhandler/TouchHandler.cpp
         )
 
 list(APPEND RECOVERY_SOURCE_FILES
@@ -552,6 +553,7 @@ list(APPEND RECOVERY_SOURCE_FILES
         components/heartrate/Ptagc.cpp
         components/motor/MotorController.cpp
         components/fs/FS.cpp
+        touchhandler/TouchHandler.cpp
         )
 
 list(APPEND RECOVERYLOADER_SOURCE_FILES
@@ -587,9 +589,7 @@ set(INCLUDE_FILES
         displayapp/screens/Clock.h
         displayapp/screens/Tile.h
         displayapp/screens/Meter.h
-        displayapp/screens/InfiniPaint.h
         displayapp/screens/StopWatch.h
-        displayapp/screens/Paddle.h
         displayapp/screens/DropDownDemo.h
         displayapp/screens/BatteryIcon.h
         displayapp/screens/BleIcon.h
@@ -605,8 +605,8 @@ set(INCLUDE_FILES
         displayapp/screens/Notifications.h
         displayapp/screens/HeartRate.h
         displayapp/screens/Metronome.h
-        displayapp/screens/Motion.h
         displayapp/screens/Timer.h
+        displayapp/Colors.h
         drivers/St7789.h
         drivers/SpiNorFlash.h
         drivers/SpiMaster.h
@@ -660,6 +660,7 @@ set(INCLUDE_FILES
         components/heartrate/Ptagc.h
         components/heartrate/HeartRateController.h
         components/motor/MotorController.h
+        touchhandler/TouchHandler.h
         )
 
 include_directories(

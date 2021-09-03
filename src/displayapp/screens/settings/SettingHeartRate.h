@@ -3,6 +3,7 @@
 #include <cstdint>
 #include <lvgl/lvgl.h>
 #include "components/settings/Settings.h"
+#include "components/heartrate/HeartRateController.h"
 #include "displayapp/screens/Screen.h"
 
 namespace Pinetime {
@@ -10,17 +11,20 @@ namespace Pinetime {
   namespace Applications {
     namespace Screens {
 
-      class SettingDisplay : public Screen {
+      class SettingHeartRate : public Screen {
       public:
-        SettingDisplay(DisplayApp* app, Pinetime::Controllers::Settings& settingsController);
-        ~SettingDisplay() override;
+        SettingHeartRate(DisplayApp* app, Pinetime::Controllers::Settings& settingsController);
+        ~SettingHeartRate() override;
 
+        bool Refresh() override;
         void UpdateSelected(lv_obj_t* object, lv_event_t event);
 
       private:
         Controllers::Settings& settingsController;
-        uint8_t optionsTotal;
-        lv_obj_t* cbOption[4];
+
+        lv_obj_t* gainValue;
+        lv_obj_t* btnPlus;
+        lv_obj_t* btnMinus;
       };
     }
   }

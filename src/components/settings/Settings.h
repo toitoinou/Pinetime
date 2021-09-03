@@ -17,6 +17,14 @@ namespace Pinetime {
         DoubleTap = 1,
         RaiseWrist = 2,
       };
+      enum class Colors : uint8_t {
+        White, Silver, Gray, Black, Red, Maroon, Yellow, Olive, Lime, Green, Cyan, Teal, Blue, Navy, Magenta, Purple, Orange
+      };
+      struct PineTimeStyle {
+        Colors ColorTime = Colors::Teal;
+        Colors ColorBar = Colors::Teal;
+        Colors ColorBG = Colors::Black;
+      };
 
       Settings(Pinetime::Controllers::FS& fs);
 
@@ -33,10 +41,38 @@ namespace Pinetime {
         return settings.clockFace;
       };
 
+      void SetPTSColorTime(Colors colorTime) {
+        if (colorTime != settings.PTS.ColorTime)
+          settingsChanged = true;
+        settings.PTS.ColorTime = colorTime;
+      };
+      Colors GetPTSColorTime() const {
+        return settings.PTS.ColorTime;
+      };
+
+      void SetPTSColorBar(Colors colorBar) {
+        if (colorBar != settings.PTS.ColorBar)
+          settingsChanged = true;
+        settings.PTS.ColorBar = colorBar;
+      };
+      Colors GetPTSColorBar() const {
+        return settings.PTS.ColorBar;
+      };
+
+      void SetPTSColorBG(Colors colorBG) {
+        if (colorBG != settings.PTS.ColorBG)
+          settingsChanged = true;
+        settings.PTS.ColorBG = colorBG;
+      };
+      Colors GetPTSColorBG() const {
+        return settings.PTS.ColorBG;
+      };
+
       void SetAppMenu(uint8_t menu) {
         appMenu = menu;
       };
-      uint8_t GetAppMenu() {
+
+      uint8_t GetAppMenu() const {
         return appMenu;
       };
 
@@ -115,21 +151,33 @@ namespace Pinetime {
         return settings.brightLevel;
       };
 
-      void SetStepsGoal( uint32_t goal ) { 
-        if ( goal != settings.stepsGoal ) {
+      void SetStepsGoal(uint32_t goal) {
+        if (goal != settings.stepsGoal) {
           settingsChanged = true;
         }
-        settings.stepsGoal = goal; 
+        settings.stepsGoal = goal;
       };
-      
-      uint32_t GetStepsGoal() const { return settings.stepsGoal; };
+
+      uint32_t GetStepsGoal() const {
+        return settings.stepsGoal;
+      };
+
+      void SetHeartSensorGain(uint32_t gain) {
+        if (gain != settings.heartSensorGain) {
+          settingsChanged = true;
+        }
+        settings.heartSensorGain = gain;
+      };
+
+      uint32_t GetHeartSensorGain() const {
+        return settings.heartSensorGain;
+      };
 
     private:
       Pinetime::Controllers::FS& fs;
 
-      static constexpr uint32_t settingsVersion = 0x0001;
+      static constexpr uint32_t settingsVersion = 0x0002;
       struct SettingsData {
-
         uint32_t version = settingsVersion;
         uint32_t stepsGoal = 10000;
         uint32_t screenTimeOut = 15000;
@@ -138,6 +186,9 @@ namespace Pinetime {
         Vibration vibrationStatus = Vibration::ON;
 
         uint8_t clockFace = 0;
+        uint8_t heartSensorGain = 4;
+
+        PineTimeStyle PTS;
 
         std::bitset<3> wakeUpMode {0};
 

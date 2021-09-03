@@ -36,8 +36,8 @@ void Hrs3300::Init() {
   // HRS and ALS both in 16-bit mode
   WriteRegister(static_cast<uint8_t>(Registers::Res), 0x88);
 
-  // 64x gain
-  WriteRegister(static_cast<uint8_t>(Registers::Hgain), 0x10);
+  // 4x gain, reduced value
+  WriteRegister(static_cast<uint8_t>(Registers::Hgain), 0x8);
 }
 
 void Hrs3300::Enable() {
