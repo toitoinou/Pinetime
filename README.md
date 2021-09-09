@@ -16,6 +16,7 @@ Toitoinous selection based on Infinitime v1.4 with the following changes
  - This timer related PR :https://github.com/JF002/InfiniTime/pull/554
  - This wake up time related PR : https://github.com/JF002/InfiniTime/pull/586
  - This BLE related PR : https://github.com/JF002/InfiniTime/pull/625
+ - This notification fix from Riksu9000 : https://github.com/JF002/InfiniTime/commit/1635bfafb3fe9dce1ab05102d1bfeac1eca81c66
  - Paddle, twos, Infinipaint, navigation and motion apps have been removed
 # InfiniTime
 
