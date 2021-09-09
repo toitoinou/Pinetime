@@ -16,7 +16,7 @@ namespace Pinetime {
         SettingHeartRate(DisplayApp* app, Pinetime::Controllers::Settings& settingsController);
         ~SettingHeartRate() override;
 
-        bool Refresh() override;
+        void Refresh() override;
         void UpdateSelected(lv_obj_t* object, lv_event_t event);
 
       private:

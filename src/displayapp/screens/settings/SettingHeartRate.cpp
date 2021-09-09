@@ -68,8 +68,8 @@ SettingHeartRate::~SettingHeartRate() {
   settingsController.SaveSettings();
 }
 
-bool SettingHeartRate::Refresh() {
-  return running;
+void SettingHeartRate::Refresh() {
+  //return running;
 }
 
 void SettingHeartRate::UpdateSelected(lv_obj_t* object, lv_event_t event) {
