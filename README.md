@@ -1,4 +1,4 @@
-# PineTime
+# InfiniTime
 
 [![Build PineTime Firmware](https://github.com/JF002/InfiniTime/workflows/Build%20PineTime%20Firmware/badge.svg?branch=master)](https://github.com/JF002/InfiniTime/actions)
 
@@ -22,13 +22,18 @@ Toitoinous selection based on Infinitime v1.4 with the following changes
 
 ![InfiniTime logo](images/infinitime-logo.jpg "InfiniTime Logo")
 
-The goal of this project is to design an open-source firmware for the Pinetime smartwatch :
+The goal of this project is to design an open-source firmware for the [Pinetime smartwatch](https://www.pine64.org/pinetime/) :
 
  - Code written in **modern C++**;
  - Build system based on **CMake**;
  - Based on **[FreeRTOS 10.0.0](https://freertos.org)** real-time OS.
  - Using **[LittleVGL/LVGL 7](https://lvgl.io/)** as UI library...
  - ... and **[NimBLE 1.3.0](https://github.com/apache/mynewt-nimble)** as BLE stack.
+
+## New to InfiniTime?
+
+ - [Getting started with InfiniTime 1.0 (quick user guide, update bootloader and InfiniTime,...)](doc/gettingStarted/gettingStarted-1.0.md)
+ - [Flash, upgrade (OTA), time synchronization,...](doc/gettingStarted/ota-gadgetbridge-nrfconnect.md)
 
 ## Overview
 
@@ -78,15 +83,11 @@ As of now, here is the list of achievements of this project:
     * [Amazfish](https://openrepos.net/content/piggz/amazfish) (on SailfishOS and Linux)
     * [Siglo](https://github.com/alexr4535/siglo) (on Linux)
     * **[Experimental]** [WebBLEWatch](https://hubmartin.github.io/WebBLEWatch/) Synchronize time directly from your web browser. [video](https://youtu.be/IakiuhVDdrY)
+    * **[Experimental]** [Infini-iOS](https://github.com/xan-m/Infini-iOS) (on iOS)
  - OTA (Over-the-air) update via BLE
  - [Bootloader](https://github.com/JF002/pinetime-mcuboot-bootloader) based on [MCUBoot](https://juullabs-oss.github.io/mcuboot/)
 
 ## Documentation
-
-### Getting started
-
- - [Getting started with InfiniTime 1.0 (quick user guide, update bootloader and InfiniTime,...)](doc/gettingStarted/gettingStarted-1.0.md)
- - [Flash, upgrade (OTA), time synchronization,...](doc/gettingStarted/ota-gadgetbridge-nrfconnect.md)
 
 ### Develop
 
