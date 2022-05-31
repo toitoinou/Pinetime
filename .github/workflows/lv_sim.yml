@@ -8,7 +8,7 @@ on:
 
   # Run on all branches
   push:
-    branches: []
+    branches: [ master, develop ]
 
   # Also run this Workflow when a Pull Request is created or updated in the "master" and "develop" Branch
   pull_request:
