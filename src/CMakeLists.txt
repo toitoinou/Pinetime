@@ -622,9 +622,7 @@ set(INCLUDE_FILES
         displayapp/screens/Clock.h
         displayapp/screens/Tile.h
         displayapp/screens/Meter.h
-        displayapp/screens/InfiniPaint.h
         displayapp/screens/StopWatch.h
-        displayapp/screens/Paddle.h
         displayapp/screens/BatteryIcon.h
         displayapp/screens/BleIcon.h
         displayapp/screens/NotificationIcon.h
